@@ -1,0 +1,360 @@
+.common-button {
+  background-color: #379f00;
+  border-color: #379f00;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.common-button:hover {
+  background-color: #379f00;
+  border-color: #379f00;
+}
+.section-track-health {
+  padding-top: 7rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  background-image: url("../../../public/assets/images/background-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  position: relative;
+}
+.section-track-health::before {
+  content: "";
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #3f41b221;
+}
+.section-first-inputContainer {
+  position: relative;
+}
+.section-first-inputContainer .title {
+  font-size: 74px;
+  line-height: 81px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  max-width: 400px;
+  text-shadow: 2px 2px #3f41b2;
+}
+.section-first-inputContainer .info {
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.125em;
+  line-height: 1.37em;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.section-first-inputContainer a {
+  text-decoration: none;
+  float: right;
+  color: #fff;
+}
+
+#basic-addon1 button {
+  font-size: 17px;
+  background-color: #379f00 !important;
+  color: #fff !important;
+  border-radius: 10px;
+  padding: 8px 35px 9px;
+  border: 3px solid #379f00 !important;
+}
+
+.section-first-imageContainer .emailInput {
+  overflow: visible;
+}
+.emailInput {
+  border-radius: 12px;
+  background-color: #fff;
+  margin-top: 40px;
+}
+.emailInput input:focus {
+  box-shadow: none;
+}
+.emailInput input,
+.emailInput .input-group-text {
+  background-color: transparent;
+  border: none;
+}
+
+/* Section Second Styles start here*/
+.section-second {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0;
+}
+.mission-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.mission-box li {
+  width: 50%;
+  position: relative;
+  list-style: none;
+}
+.mission-box li > div {
+  height: 162px;
+  width: 162px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.mission-box li > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  /* box-shadow: 0px 6px 20px rgba(55, 159 ,0 ,0.2); */
+  box-shadow: 0px 6px 20px rgba(63, 65, 178, 0.2);
+  border-radius: 20px;
+  transform: rotate(-45deg);
+}
+.mission-box li img {
+  z-index: 10;
+  position: relative;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.section-second-rightContainer {
+  position: relative;
+  align-items: center;
+  padding: 50px 0;
+}
+.common-heading {
+  font-style: normal;
+  color: #3f41b2;
+  line-height: 1.11em;
+  text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.section-second-rightContainer p {
+  color: #000;
+  letter-spacing: 0.022em;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/*second-section end*/
+
+/* Section third styles here */
+.section-third {
+  padding: 40px 0;
+  /* background-color: #11b9fc88; */
+  /* margin-top: -1px;
+  background-image: url("../../../public/assets/images/third-sec.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply; */
+}
+
+.section-third .detail-card {
+  /* background-color: rgba(255, 255, 255, 0.801); */
+  background-color: #fff;
+  padding: 15px;
+  min-height: 240px;
+  box-sizing: border-box;
+  margin: 30px 20px;
+  border-radius: 10px;
+  /* border: 1px solid #04e6f7; */
+  box-shadow: 0px 8px 20px rgba(63, 65, 178, 0.2);
+  position: relative;
+}
+
+.section-third .detail-card img {
+  height: 80px;
+  width: 100%;
+  object-fit: contain;
+}
+.section-third .detail-card h3 {
+  color: #379f00;
+  font-weight: 700;
+  font-family: "Portico-Regular";
+  margin: 18px 0 10px;
+  font-size: 24px;
+  text-align: center;
+}
+.section-third .detail-card p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-align: center;
+  color: #000;
+}
+
+/* Section-fourth styles here */
+.section-fourth {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0;
+}
+
+.section-fourth::before {
+  content: "";
+  background-image: url("../../../public/assets/images/background.png");
+  position: absolute;
+  top: -1px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transform: scale(1, -1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+.section-fourth-imageContainer img {
+  border: 4px solid white;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  position: relative;
+}
+.section-fourth-rightContainer {
+  position: relative;
+  align-items: center;
+}
+
+/* Scroll Top Top Button */
+
+#topButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+#topButton {
+  display: flex;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #379f00;
+}
+.hide {
+  display: none;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 991px) {
+  .section-third .detail-card p {
+    font-size: 14px;
+  }
+  .mission-box li > div {
+    height: 127px;
+    width: 127px;
+  }
+  .mission-box li img {
+    height: 70px;
+  }
+  .section-first-inputContainer .title {
+    font-size: 56px;
+    line-height: 62px;
+    margin-bottom: 10px;
+  }
+  .section-track-health {
+    padding-top: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .section-track-health {
+    padding-top: 3rem;
+    background-size: 100% 100%;
+  }
+  .section-third .detail-card {
+    padding: 10px;
+    min-height: auto;
+    margin: 20px 4px;
+  }
+  .section-third .detail-card p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .section-first-inputContainer .title {
+    font-size: 34px;
+    line-height: 41px;
+  }
+  .section-first-inputContainer .info {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  #basic-addon1 button {
+    font-size: 14px;
+    padding: 5px 11px 5px;
+    line-height: 15px;
+  }
+  .emailInput {
+    margin-top: 20px;
+  }
+  .mission-box li > div {
+    margin: 0 auto;
+    height: 110px;
+    width: 110px;
+  }
+  .mission-box li img {
+    height: 70px;
+  }
+  .navBarLogo,
+  .darker-header .navBarLogo {
+    max-height: 37px;
+  }
+  .navbar-toggler {
+    background-color: #3f41b2;
+    padding: 2px 5px;
+  }
+  .navbar-toggler-icon {
+    height: 1em;
+    width: 1em;
+  }
+  .section-track-health::before {
+    height: 92%;
+  }
+  .common-heading {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .section-second-rightContainer {
+    padding: 30px 0;
+  }
+  .section-second-rightContainer p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .section-second {
+    padding: 30px 0;
+  }
+  .section-third {
+    padding: 20px 0;
+  }
+  .footer-sec {
+    background-image: none;
+  }
+}

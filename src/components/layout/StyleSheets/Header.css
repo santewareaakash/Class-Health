@@ -1,0 +1,32 @@
+.heading {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+.heading.darker-header {
+  transition: all 0.2s ease;
+  background-color: rgba(33, 45, 56, 0.692);
+}
+
+.buttonContainer {
+  transition: all 0.2s ease;
+  display: none !important;
+}
+
+.darker-header .buttonContainer {
+  transition: all 0.2s ease;
+  display: flex !important;
+}
+
+.navBarLogo {
+  transition: all 0.3s ease;
+  max-height: 70px;
+}
+
+.darker-header .navBarLogo {
+  transition: all 0.3s ease;
+  max-height: 50px;
+}
