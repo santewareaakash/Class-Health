@@ -17,14 +17,14 @@ const Footer = () => {
                 />
               </div>
               <div className="footer-contact">
-                <i class="fa fa-phone"></i>
+                <i className="fa fa-phone"></i>
                 <div>
                   <h3>Contact Us</h3>
                   <p>+91-7892854382</p>
                 </div>
               </div>
               <div className="footer-contact">
-                <i class="fa fa-envelope"></i>
+                <i className="fa fa-envelope"></i>
                 <div>
                   <h3>Email Address</h3>
                   <a href="mailto:classhealth500@gmail.com">
@@ -33,7 +33,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="footer-contact">
-                <i class="fa fa-globe" aria-hidden="true"></i>
+                <i className="fa fa-globe" aria-hidden="true"></i>
                 <div>
                   <p>www.classhealth.in</p>
                 </div>
@@ -69,17 +69,17 @@ const Footer = () => {
             <Col md="6">
               <p> © 2021 Class Health, Inc. All Rights Reserved.</p>
             </Col>
-            <Col md="6" sm="6">
+            <Col md="6" >
               <div className="connect-links">
                 <ul>
                   <li>
                     <a href="http://twitter.com" target="_blank">
-                      <i class="fab fa-twitter"></i>
+                      <i className="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li>
                     <a href="http://linkedin.com" target="_blank">
-                      <i class="fab fa-linkedin"></i>
+                      <i className="fab fa-linkedin"></i>
                     </a>
                   </li>
                 </ul>

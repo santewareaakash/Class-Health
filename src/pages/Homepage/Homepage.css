@@ -19,20 +19,34 @@
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  background-image: url("../../../public/assets/images/background-banner.jpg");
+  background-color: #0f39776b;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   position: relative;
 }
-.section-track-health::before {
+#tsparticles canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent !important;
+  background-blend-mode: multiply;
+}
+/* .section-track-health::before {
   content: "";
   top: 0;
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: #3f41b221;
-}
+} */
 .section-first-inputContainer {
   position: relative;
 }
@@ -354,7 +368,5 @@
   .section-third {
     padding: 20px 0;
   }
-  .footer-sec {
-    background-image: none;
-  }
+ 
 }

@@ -8,7 +8,7 @@ const NavBar = () => {
 
 
   return (
-    <Navbar expand="lg" STYLE={{ padding: 0 }}>
+    <Navbar expand="lg" style={{ padding: 0 }}>
       <Container>
         <Navbar.Brand href="#">
           <img

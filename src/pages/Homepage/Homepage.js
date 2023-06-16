@@ -1,10 +1,39 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "../../components/layout/shared/Layout";
 import "./Homepage.css";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import ModalComponent from "../../components/layout/shared/ModalComponent";
+import { ContactUs } from "../../components/layout/shared/Contact";
 
 const Homepage = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const emailChangeHandler = (e) => {
+    setError(false);
+    setEmail(e.target.value);
+  };
   const inputRef = useRef();
+
+  const handleModalShow = () => {
+    const emailRegex = new RegExp(
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+
+    if (email.trim().length === 0 || !emailRegex.test(email)) {
+      setError(true);
+    } else {
+      setError(false);
+      setShowModal(true);
+    }
+  };
+  const handleModalClose = () => {
+    setShowModal(false);
+    setEmail("");
+  };
 
   const handleClicktoTop = () => {
     window.scrollTo(0, 0);
@@ -24,9 +53,144 @@ const Homepage = () => {
     };
   }, []);
 
+  const particlesInit = async (main) => {
+    console.log(main);
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(main);
+  };
+
   return (
     <Layout>
       <div className="section-track-health" id="first-section">
+        <div>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            options={{
+              fullScreen: {
+                enable: false,
+                zIndex: 1,
+              },
+              particles: {
+                number: {
+                  value: 60,
+                  density: {
+                    enable: true,
+                    value_area: 800,
+                  },
+                },
+                color: {
+                  value: "#379f00",
+                },
+                shape: {
+                  type: "circle",
+                  stroke: {
+                    width: 0,
+                    color: "#000000",
+                  },
+                  polygon: {
+                    nb_sides: 5,
+                  },
+                  image: {
+                    src: "img/github.svg",
+                    width: 100,
+                    height: 100,
+                  },
+                },
+                opacity: {
+                  value: 0.5,
+                  random: false,
+                  anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false,
+                  },
+                },
+                size: {
+                  value: 5,
+                  random: true,
+                  anim: {
+                    enable: false,
+                    speed: 10,
+                    size_min: 0.1,
+                    sync: false,
+                  },
+                },
+                line_linked: {
+                  enable: true,
+                  distance: 150,
+                  color: "#379f00",
+                  opacity: 0.2,
+                  width: 1,
+                },
+                move: {
+                  enable: true,
+                  speed: 2,
+                  direction: "none",
+                  random: false,
+                  straight: false,
+                  out_mode: "out",
+                  bounce: false,
+                  attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200,
+                  },
+                },
+              },
+              interactivity: {
+                detect_on: "canvas",
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: "grab",
+                  },
+                  onclick: {
+                    enable: true,
+                    mode: "push",
+                  },
+                  resize: true,
+                },
+                modes: {
+                  grab: {
+                    distance: 140,
+                    line_linked: {
+                      opacity: 1,
+                    },
+                  },
+                  bubble: {
+                    distance: 400,
+                    size: 30,
+                    duration: 2,
+                    opacity: 7,
+                    speed: 3,
+                  },
+                  repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                  },
+                  push: {
+                    particles_nb: 4,
+                  },
+                  remove: {
+                    particles_nb: 2,
+                  },
+                },
+              },
+              retina_detect: true,
+              background: {
+                color: "#fdbf13",
+                image: "",
+                position: "50% 50%",
+                repeat: "no-repeat",
+                size: "cover",
+              },
+            }}
+          />
+        </div>
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
@@ -36,19 +200,26 @@ const Homepage = () => {
                   THE MOST INNOVATIVE WAY FOR SCHOOLS & COLLEGES TO COLLECT,
                   TRACK, SHARE AND MANAGE STUDENT HEALTH INFORMATION
                 </p>
-                <InputGroup className="emailInput mb-3 ">
+
+                <InputGroup className="emailInput mb-3">
                   <Form.Control
                     placeholder="Your Email*"
                     aria-label="Email"
                     id="email"
+                    type="email"
+                    value={email}
+                    onChange={emailChangeHandler}
                     ref={inputRef}
                   />
                   <InputGroup.Text id="basic-addon1">
-                    <Button>Connect Now</Button>
+                    <Button onClick={handleModalShow}>Connect Now</Button>
                   </InputGroup.Text>
                 </InputGroup>
-
-                <a href="#"
+                {error && (
+                  <p style={{ color: "red" }}>Please enter correct email </p>
+                )}
+                <a
+                  href="#"
                   onClick={() => {
                     inputRef.current.focus();
                   }}
@@ -57,13 +228,14 @@ const Homepage = () => {
                 </a>
               </div>
             </Col>
-            <Col md={5}>
-              {/* <div className="section-first-imageContainer">
+            <Col md={5} className="offset-md-1">
+              <div className="section-first-imageContainer position-relative text-center">
                 <img
-                  src="/assets/images/container1.png"
+                  src="/assets/images/nurse-3.png"
                   alt="backgroundImage"
+                  className="img-fluid"
                 />
-              </div> */}
+              </div>
             </Col>
           </Row>
         </Container>
@@ -72,7 +244,7 @@ const Homepage = () => {
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
-              <ul class="mission-box">
+              <ul className="mission-box">
                 <li>
                   <div>
                     <div>
@@ -119,7 +291,14 @@ const Homepage = () => {
                   & psychological wellbeing.
                 </p>
                 <div className="section-second-contactButtonContainer">
-                  <Button className="common-button">Contact US</Button>
+                  <Button
+                    className="common-button"
+                    onClick={() => {
+                      setShowModal(true);
+                    }}
+                  >
+                    Contact US
+                  </Button>
                 </div>
               </div>
             </Col>
@@ -211,9 +390,13 @@ const Homepage = () => {
       </div>
       <div id="scrollButton">
         <Button onClick={handleClicktoTop} id="topButton">
-          <i class="fas fa-arrow-up"></i>
+          <i className="fas fa-arrow-up"></i>
         </Button>
       </div>
+
+      <ModalComponent show={showModal} handleClose={handleModalClose}>
+        <ContactUs handleClose={handleModalClose} email={email} />
+      </ModalComponent>
     </Layout>
   );
 };

@@ -114,4 +114,15 @@
   .footer-sec .footer-contact h3 {
     font-size: 14px;
   }
+  .connect-links ul{
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .copyright-sec p{
+    text-align: center;
+  }
+   .footer-sec {
+    background-image: none;
+    padding: 30px 0 0;
+  }
 }
