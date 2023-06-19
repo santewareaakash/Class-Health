@@ -1,12 +1,10 @@
-import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "../StyleSheets/Navbar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-
-
   return (
     <Navbar expand="lg" style={{ padding: 0 }}>
       <Container>
@@ -25,8 +23,13 @@ const NavBar = () => {
             navbarScroll
           >
             <div className="buttonContainer d-flex gap-2">
-              <a className="buttonEarlyAccess" href="#">Get Early Access</a>
+              <Link className="buttonEarlyAccess" to="/">
+                Get Early Access
+              </Link>
               {/* <a className="buttonJoinUs" href="mailto:classhealth500@gmail.com">Join Us</a> */}
+              <Link className="buttonEarlyAccess" to="/login">
+                Sign In
+              </Link>
             </div>
           </Nav>
         </Navbar.Collapse>

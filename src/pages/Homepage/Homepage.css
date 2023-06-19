@@ -83,11 +83,13 @@
 }
 .emailInput input:focus {
   box-shadow: none;
+  background-color: transparent;
 }
 .emailInput input,
 .emailInput .input-group-text {
   background-color: transparent;
   border: none;
+  border-radius: none;
 }
 
 /* Section Second Styles start here*/
@@ -288,8 +290,9 @@
 }
 @media (max-width: 768px) {
   .section-track-health {
-    padding-top: 3rem;
+    padding: 4rem  0 2rem;
     background-size: 100% 100%;
+    min-height: auto;
   }
   .section-third .detail-card {
     padding: 10px;
@@ -337,7 +340,7 @@
     width: 1em;
   }
   .section-track-health::before {
-    height: 92%;
+    /* height: 92%; */
   }
   .common-heading {
     font-size: 24px;

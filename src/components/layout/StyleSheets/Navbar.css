@@ -39,3 +39,10 @@ text-decoration: none;
   line-height: 28.95px;
 }
 /* #71D840 */
+@media (max-width:991px){
+  .buttonEarlyAccess{
+    font-size: 12px;
+    line-height: 16px;
+    padding: 5px 15px
+  }
+}

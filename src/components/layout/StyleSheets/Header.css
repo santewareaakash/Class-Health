@@ -75,6 +75,14 @@
 .fade.modal {
   padding-left: 0;
 }
+@media (max-width:991px){
+.buttonContainer {
+  display: flex !important;
+}
+.heading {
+    background-color: #e6e6e6e1;
+}
+}
 @media (max-width: 768px) {
   .modal-body label {
     font-size: 14px;

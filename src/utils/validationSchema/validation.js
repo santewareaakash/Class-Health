@@ -2,22 +2,38 @@ import * as yup from "yup";
 
 //Below is the schema for login and reset password forms
 
-const sendEmailSchema = yup.object().shape({
-  user_name: yup.string().required("Name is required"),
-  user_country: yup.string().required("Name is required"),
-  user_email: yup
+// login schema
+const loginSchema = yup.object().shape({
+  email: yup.string().trim().required('Email is required').email('Invalid email'),
+  password: yup
+    .string()
+    .required('Password is required')
+    .trim()
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      'Must contain 8 characters, one uppercase, one lowercase, one number and one special case character'
+    )
+})
+
+const resetPasswordSchema = yup.object().shape({
+  new_password: yup
+    .string()
+    .required("Password is required")
+    .trim()
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+    ),
+  confirm_password: yup
     .string()
     .trim()
-    .required("Email is required")
-    .email("Invalid email"),
-  user_mobile: yup
-    .string()
-    .trim()
-    .required("Phone number is required")
-    .matches(/^\+*[0-9]+$/, {
-      message: "Invalid mobile number",
-      excludeEmptyString: false,
-    }),
+    .required("Confirm password is required")
+    .oneOf([yup.ref("new_password"), null], "Both password should match")
+    .required("Please type password again"),
 });
 
-export { sendEmailSchema };
+
+
+export { loginSchema, resetPasswordSchema };
+
+

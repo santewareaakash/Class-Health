@@ -17,7 +17,7 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-//   whitelist: ["auth", "equipment"],
+  whitelist: ["auth", "equipment"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
