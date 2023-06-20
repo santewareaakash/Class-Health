@@ -11,17 +11,31 @@ const Footer = () => {
             <Col md="6">
               <p> © 2021 Class Health, Inc. All Rights Reserved.</p>
             </Col>
-            <Col md="6" >
+            <Col md="6">
               <div className="connect-links">
                 <ul>
                   <li>
-                    <a href="http://twitter.com" target="_blank">
-                      <i className="fab fa-twitter"></i>
+                    <a
+                      href="http://twitter.com"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <i
+                        className="fab fa-twitter"
+                        style={{ color: "#fff" }}
+                      ></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://linkedin.com" target="_blank">
-                      <i className="fab fa-linkedin"></i>
+                    <a
+                      href="http://linkedin.com"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <i
+                        className="fab fa-linkedin"
+                        style={{ color: "#fff" }}
+                      ></i>
                     </a>
                   </li>
                 </ul>

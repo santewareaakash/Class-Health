@@ -1,4 +1,6 @@
 import Homepage from "../../pages/Homepage/Homepage";
+import PrivacyPolicy from "../../pages/PrivacyPolicy/PrivacyPolicy";
+import TermAndCondition from "../../pages/TermsAndCondition/TermAndCondition";
 import ForgotPassword from "../../pages/auth/ForgotPassword";
 import Login from "../../pages/auth/Login";
 import ResetPassword from "../../pages/auth/ResetPassword";
@@ -24,5 +26,13 @@ export const routes = [
   {
     path: "/reset-password",
     element: <ResetPassword />,
+  },
+  {
+    path: "/terms_conditions",
+    element: <TermAndCondition />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <PrivacyPolicy />,
   },
 ];

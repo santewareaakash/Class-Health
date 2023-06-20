@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   background-color: transparent;
+  padding:5px 0;
 }
 .heading.darker-header {
   transition: all 0.2s ease;

@@ -5,16 +5,21 @@ import "../StyleSheets/Navbar.css";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+
+    const handleClicktoTop = () => {
+      window.scrollTo(0, 0);
+    };
+
   return (
     <Navbar expand="lg" style={{ padding: 0 }}>
       <Container>
-        <Navbar.Brand href="#">
+        <Link to="/">
           <img
             src="/assets/images/logo.png"
             className="img-fluid navBarLogo"
             alt="logo"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -23,7 +28,11 @@ const NavBar = () => {
             navbarScroll
           >
             <div className="buttonContainer d-flex gap-2">
-              <Link className="buttonEarlyAccess" to="/">
+              <Link
+                className="buttonEarlyAccess"
+                to="/"
+                onClick={handleClicktoTop}
+              >
                 Get Early Access
               </Link>
               {/* <a className="buttonJoinUs" href="mailto:classhealth500@gmail.com">Join Us</a> */}

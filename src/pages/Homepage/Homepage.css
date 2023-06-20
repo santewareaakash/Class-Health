@@ -263,6 +263,9 @@
   align-items: center;
   background-color: #379f00;
 }
+#topButton:hover {
+  background-color: #9bb28e;
+}
 .hide {
   display: none;
   transition: all 0.2s ease;

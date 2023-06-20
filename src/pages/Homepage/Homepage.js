@@ -5,6 +5,7 @@ import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 
 import ModalComponent from "../../components/layout/shared/ModalComponent";
 import { ContactUs } from "../../components/layout/shared/Contact";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -52,7 +53,6 @@ const Homepage = () => {
     };
   }, []);
 
-
   return (
     <Layout>
       <div className="section-track-health" id="first-section">
@@ -83,14 +83,14 @@ const Homepage = () => {
                 {error && (
                   <p style={{ color: "red" }}>Please enter correct email </p>
                 )}
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   onClick={() => {
                     inputRef.current.focus();
                   }}
                 >
                   Click here to fill the details
-                </a>
+                </Link>
               </div>
             </Col>
             {/*   <Col md={5} className="offset-md-1">
@@ -293,9 +293,22 @@ const Homepage = () => {
                 <h4>Quick Links</h4>
                 <ul>
                   <li>About Us</li>
-                  <li>Contact Us</li>
-                  <li>Terms & Conditions</li>
-                  <li>Privacy Policy</li>
+                  <li>
+                    <Link
+                      to="/"
+                      onClick={() => {
+                        setShowModal(true);
+                      }}
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/terms_conditions">Terms & Conditions</Link>
+                  </li>
+                  <li>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                  </li>
                 </ul>
               </div>
             </Col>

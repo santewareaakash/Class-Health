@@ -54,6 +54,16 @@
   line-height: 40px;
   color: #000;
 } 
+.footer-sec .footer-links ul li a {
+  text-decoration: none;
+    color: #000;
+} 
+.footer-sec .footer-links ul li a:active,.footer-sec .footer-links ul li a:hover {
+  text-decoration: none;
+  list-style: none;
+  font-weight: 300;
+  color: #383232;
+} 
 .connect-links ul {
  padding-left: 0;
 }
@@ -86,10 +96,6 @@
 }
  .connect-links ul li {
   list-style: none;
-  background-color: #fff;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
