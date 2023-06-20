@@ -32,8 +32,16 @@ const resetPasswordSchema = yup.object().shape({
     .required("Please type password again"),
 });
 
+const forgotPasswordSchema = yup.object().shape({
+  email: yup
+    .string()
+    .trim()
+    .required("Email is required")
+    .email("Invalid email"),
+});
 
 
-export { loginSchema, resetPasswordSchema };
+
+export { loginSchema, resetPasswordSchema,forgotPasswordSchema };
 
 

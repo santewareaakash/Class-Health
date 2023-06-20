@@ -70,6 +70,7 @@ const ResetPassword = () => {
   const { control, handleSubmit, formState, reset, watch, setValue, setError } =
     methods;
   const { errors } = formState;
+  
   const form = watch();
 
   const handleFinalFormSubmit = (data) => {
