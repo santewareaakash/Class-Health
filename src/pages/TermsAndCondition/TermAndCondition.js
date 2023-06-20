@@ -276,8 +276,7 @@ const TermAndCondition = () => {
                   </ul>
                   <br></br>
                   <li>
-                    <h5>RELEVANCE ALGORITHM</h5>
-                    <br></br>
+                    <h5>RELEVANCE ALGORITHM</h5>                    
                     <p>
                       ClassHealth's relevance algorithm for the Practitioners is
                       a fully automated system that lists the Practitioners,
@@ -1259,6 +1258,7 @@ const TermAndCondition = () => {
                       inconsistency.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>TERMS OF USE PRACTITIONERS</h4>
                     <p>
@@ -1694,6 +1694,7 @@ const TermAndCondition = () => {
                       violations of any intellectual property rights
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>Termination</h4>
                   </li>
@@ -1743,6 +1744,7 @@ const TermAndCondition = () => {
                       User's record keeping process and practices.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>LIMITATION OF LIABILITY</h4>
                     <p>
@@ -1788,6 +1790,7 @@ const TermAndCondition = () => {
                       Thousand Only).
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>RETENTION AND REMOVAL</h4>
                     <p>
@@ -1799,6 +1802,7 @@ const TermAndCondition = () => {
                       be preserved as long as administratively necessary.
                     </p>
                   </li>
+                  <br></br>
                   <li>
                     <h4>APPLICABLE LAW AND DISPUTE SETTLEMENT</h4>
                   </li>
@@ -1831,6 +1835,7 @@ const TermAndCondition = () => {
                       it gives access.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>CONTACT INFORMATION GRIEVANCE OFFICER</h4>
                   </li>
@@ -1859,6 +1864,7 @@ const TermAndCondition = () => {
                       your grievance to the above person.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>SEVERABILITY</h4>
                     <p>
@@ -1876,6 +1882,7 @@ const TermAndCondition = () => {
                       competent jurisdiction or arbitral tribunal.
                     </p>
                   </li>
+                  <br></br>
                   <li>
                     <h4>WAIVER</h4>
                     <p>
@@ -1888,6 +1895,7 @@ const TermAndCondition = () => {
                       different or subsequent breach.
                     </p>
                   </li>
+                  <br></br>
                   <li>
                     <h4>BRITANNIA NUTRICHOICE OFFER TERMS AND CONDITIONS</h4>
                     <p>
@@ -2057,6 +2065,7 @@ const TermAndCondition = () => {
                       disputes arising pursuant to or under these Terms.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>
                       14. CLASSHEALTH HEALTH PLAN – USER TERMS AND CONDITIONS
@@ -2078,7 +2087,6 @@ const TermAndCondition = () => {
                     </p>
                   </li>
                   <ul>
-                      <br></br>
                     <li>
                       <h5>NATURE AND APPLICABILITY OF TERMS</h5>
                       <p>
@@ -2150,7 +2158,6 @@ const TermAndCondition = () => {
                         solely at the discretion of ClassHealth.
                       </p>
                     </li>
-                      <br></br>
                     <li>
                       <h5>CONDITIONS OF USE</h5>
                       <p>
@@ -2174,7 +2181,6 @@ const TermAndCondition = () => {
                         Service and agree to and abide by these Terms.
                       </p>
                     </li>
-                      <br></br>
                     <li>
                       <h5>TERMS OF THE HEALTH PLAN SERVICE</h5>
                     </li>

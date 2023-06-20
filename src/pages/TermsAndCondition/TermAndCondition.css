@@ -31,8 +31,8 @@
 
 .content-1 h4 {
   color: #3f41b2;
-  font-size: 22px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 25px;
   font-weight: 700;
 }
 .content-1 h5 {
@@ -41,9 +41,9 @@
   line-height: 22px;
   font-weight: 700;
 }
-.content-1 p {
+.content-1 p,.content-1 ul li {
   color: rgba(0.0.5);
-  font-size: 16px;
-  line-height: 24x;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 400;
 }

@@ -105,6 +105,7 @@ const PrivacyPolicy = () => {
                       information.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>COLLECTION OF PERSONAL INFORMATION</h4>
                     <p>
@@ -184,6 +185,7 @@ const PrivacyPolicy = () => {
                       without your consent.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>PRIVACY STATEMENTS</h4>
                   </li>
@@ -508,6 +510,7 @@ const PrivacyPolicy = () => {
                         Terms of Use.
                       </li>
                     </ul>
+                    <br></br>
                     <li>
                       <h5>PRACTITIONERS NOTE:</h5>
                       <p>This section applies to all Practitioners.</p>
@@ -607,6 +610,7 @@ const PrivacyPolicy = () => {
                         the Website for such Practitioners.
                       </li>
                     </ul>
+                    <br></br>
                     <li>
                       <h5>
                         END-USERS NOTE: <br />
@@ -759,6 +763,7 @@ const PrivacyPolicy = () => {
                         intended purposes only.
                       </li>
                     </ul>
+                    <br></br>
                     <li>
                       <h5>CASUAL VISITORS NOTE:</h5>
                     </li>
@@ -802,6 +807,7 @@ const PrivacyPolicy = () => {
                       </li>
                     </ul>
                   </ul>
+                  <br></br>
                   <li>
                     <h4> 4.CONFIDENTIALITY AND SECURITY</h4>
                   </li>
@@ -859,6 +865,7 @@ const PrivacyPolicy = () => {
                       records to the relevant patients, or to their doctors.
                     </li>
                   </ul>
+                  <br></br>
                   <li>
                     <h4>5.CHANGE TO PRIVACY POLICY</h4>
                     <p>
