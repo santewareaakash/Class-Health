@@ -9,7 +9,7 @@ import { Controller, FormProvider, useForm } from "react-hook-form";
 // ** Layout Import
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { resetPasswordSchema } from "../../utils/validationSchema/validation";
+import { changePasswordSchema, resetPasswordSchema } from "../../utils/validationSchema/validation";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 
 // ** Styled Components
@@ -21,24 +21,18 @@ const PasswordChange = () => {
   const loading = useSelector(({ loading }) => loading.loading);
 
   // ** States
-  const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
 
   const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
 
-  const toggleShowOldPassword = () => {
-    setShowOldPassword((prev) => !prev);
-  };
-
-  const toggleShowNewPassword = () => {
-    setShowNewPassword((prev) => !prev);
-  };
-  const toggleShowConfirmPassword = () => {
-    setShowConfirmNewPassword((prev) => !prev);
-  };
+  const toggleShowNewPassword = ()=>{
+    setShowNewPassword(prev =>!prev)
+  }
+  const toggleShowConfirmPassword = ()=>{
+    setShowConfirmNewPassword(prev =>!prev)
+  }
 
   const defaultValues = {
-    old_password: "",
     new_password: "",
     confirm_password: "",
   };
@@ -47,7 +41,7 @@ const PasswordChange = () => {
   const methods = useForm({
     mode: "onChange",
     defaultValues: defaultValues,
-    resolver: yupResolver(resetPasswordSchema),
+    resolver: yupResolver(changePasswordSchema),
   });
 
   const {
@@ -65,7 +59,7 @@ const PasswordChange = () => {
   const form = watch();
 
   const onSubmit = (data) => {
-    const { new_password, confirm_password, old_password } = data;
+    const { new_password, confirm_password } = data;
     console.log("data", data);
   };
 
@@ -78,33 +72,9 @@ const PasswordChange = () => {
               <Row className="align-items-center">
                 <Col md={6}>
                   <div className="login-form">
-                    <h3>Reset Password</h3>
+                    <h3>Change Temporary Password</h3>
 
                     <Form onSubmit={handleSubmit(onSubmit)}>
-                      <Form.Group className="mb-3" controlId="old_password">
-                        <InputGroup className="mb-3">
-                          <Form.Label>Old Password:</Form.Label>
-                          <Form.Control
-                            type={showOldPassword ? "text" : "password"}
-                            {...register("old_password", {
-                              required: "Please enter password",
-                            })}
-                          />
-
-                          <InputGroup.Text onClick={toggleShowOldPassword}>
-                            {showOldPassword ? (
-                              <i class="fa fa-eye-slash"></i>
-                            ) : (
-                              <i class="fa fa-eye"></i>
-                            )}
-                          </InputGroup.Text>
-                        </InputGroup>
-                        {errors.new_password && (
-                          <Form.Text className="text-danger">
-                            {errors.new_password.message}
-                          </Form.Text>
-                        )}
-                      </Form.Group>
                       <Form.Group className="mb-3" controlId="new_password">
                         <InputGroup className="mb-3">
                           <Form.Label>New Password:</Form.Label>
@@ -154,7 +124,7 @@ const PasswordChange = () => {
                         )}
                       </Form.Group>
                       <div>
-                        <button className="common-btn  m-0">Submit</button>
+                        <button className="common-btn  m-0">Activate</button>
                       </div>
                     </Form>
                   </div>

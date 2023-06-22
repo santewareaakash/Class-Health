@@ -1,56 +1,34 @@
-// ** Next Import
 import { useDispatch } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
 
-// ** MUI Components
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-// ** Icon Imports
-import Icon from "../../components/icon/index";
-
-// ** Demo Imports
-import { FormControl, FormHelperText } from "@mui/material";
-
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { emailSchema } from "../../utils/validationSchema/validation";
 
-const LinkStyled = styled(Link)(({ theme }) => ({
-  display: "flex",
-  "& svg": { mr: 1.5 },
-  alignItems: "center",
-  textDecoration: "none",
-  justifyContent: "center",
-  color: theme.palette.primary.main,
-}));
+ const defaultValues = {
+   email: "",
+ };
+
 
 const ForgotPassword = () => {
   // ** Hooks
 
-  const TypographyStyled = styled(Typography)(({ theme }) => ({
-    fontWeight: 600,
-    letterSpacing: "0.18px",
-    marginBottom: theme.spacing(1.5),
-    [theme.breakpoints.down("md")]: { marginTop: theme.spacing(8) },
-  }));
-
   const dispatch = useDispatch();
 
-  const defaultValues = {
-    email: "",
-  };
-
+ 
   const {
-    control,
-    setError,
     handleSubmit,
+    watch,
+    register,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues,
     mode: "onBlur",
+    resolver: yupResolver(emailSchema),
   });
 
   const onSubmit = (e) => {
@@ -71,71 +49,29 @@ const ForgotPassword = () => {
             <Col md="10" className="m-auto">
               <div className="shadow-box">
                 <Row className="align-items-center">
+                  <h4>Forgot Password? 🔒</h4>
+                  <h5>
+                    Enter your email and we&prime;ll send you instructions to
+                    reset your password
+                  </h5>
                   <Col md={6}>
-                    <div className="login-form">
-                      <h3>Forgot Password?</h3>
-                      <Box sx={{ mb: 6 }}>
-                        {/* <TypographyStyled variant="h5">
-                          Forgot Password? 🔒
-                        </TypographyStyled> */}
-                        <Typography variant="body2">
-                          Enter your email and we&prime;ll send you instructions
-                          to reset your password
-                        </Typography>
-                      </Box>
-                      <form
-                        noValidate
-                        autoComplete="off"
-                        onSubmit={handleSubmit(onSubmit)}
-                      >
-                        <FormControl fullWidth sx={{ mb: 4 }}>
-                          <Controller
-                            name="email"
-                            control={control}
-                            rules={{ required: true }}
-                            render={({
-                              field: { value, onChange, onBlur },
-                            }) => (
-                              <TextField
-                                autoFocus
-                                label="Email"
-                                value={value}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                error={Boolean(errors.email)}
-                              />
-                            )}
-                          />
-                          {errors.email && (
-                            <FormHelperText sx={{ color: "error.main" }}>
-                              {errors.email.message}
-                            </FormHelperText>
-                          )}
-                        </FormControl>
-                        <Button
-                          fullWidth
-                          className="login-btn"
-                          size="large"
-                          type="submit"
-                          variant="contained"
-                          sx={{ mb: 3.25 }}
-                        >
-                          Send reset link
-                        </Button>
-                        <Typography
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <LinkStyled to="/login">
-                            <Icon icon="mdi:chevron-left" fontSize="2rem" />
-                            <span>Back to login</span>
-                          </LinkStyled>
-                        </Typography>
-                      </form>
-                    </div>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email*</Form.Label>
+                        <Form.Control
+                          type="email"
+                          placeholder="Email:"
+                          {...register("email", {
+                            required: "Email is Required",
+                          })}
+                        />
+                        {errors.email && (
+                          <Form.Text className="text-danger">
+                            {errors.email.message}
+                          </Form.Text>
+                        )}
+                      </Form.Group>
+                    </Form>
                   </Col>
                   <Col md={6}>
                     <div className="text-center response">

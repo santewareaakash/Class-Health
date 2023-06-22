@@ -22,13 +22,17 @@
 }
 
 .content-1 {
-  margin-top: -80px;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0px 8px 20px rgba(63, 65, 178, 0.2);
-  background-color: #fff;
+  
+ 
+ 
 }
-
+.set-margin{
+  margin-top: -80px;
+   box-shadow: 0px 8px 20px rgba(63, 65, 178, 0.2);
+  background-color: #fff;
+   border-radius: 10px;
+  padding: 15px;
+}
 .content-1 h4 {
   color: #3f41b2;
   font-size: 20px;
@@ -46,4 +50,12 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+}
+
+
+.scroll-content{
+  overflow-y:scroll ;
+  max-height:400px;
+  overflow-x: hidden;
+
 }

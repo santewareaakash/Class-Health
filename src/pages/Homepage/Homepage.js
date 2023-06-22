@@ -330,7 +330,7 @@ const Homepage = () => {
         </Button>
       </div>
 
-      <ModalComponent show={showModal} handleClose={handleModalClose}>
+      <ModalComponent show={showModal} handleClose={handleModalClose} title={'Contact US'}>
         <ContactUs handleClose={handleModalClose} email={email} />
       </ModalComponent>
     </Layout>

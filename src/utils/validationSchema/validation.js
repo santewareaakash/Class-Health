@@ -53,7 +53,7 @@ const registerSchema = yup.object().shape({
     .required("Please enter your age"),
 });
 
-const resetPasswordSchema = yup.object().shape({
+const changePasswordSchema = yup.object().shape({
   new_password: yup
     .string()
     .required("Password is required")
@@ -70,6 +70,26 @@ const resetPasswordSchema = yup.object().shape({
     .required("Please type password again"),
 });
 
+const resetPasswordSchema = yup.object().shape({
+  old_password: yup.string().required("Old Password is required"),
+  new_password: yup
+    .string()
+    .required("Password is required")
+    .trim()
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+    ),
+  confirm_password: yup
+    .string()
+    .trim()
+    .required("Confirm password is required")
+    .oneOf([yup.ref("new_password"), null], "Both password should match")
+    .required("Please type password again"),
+});
+
+
+
 const forgotPasswordSchema = yup.object().shape({
   email: yup
     .string()
@@ -78,13 +98,48 @@ const forgotPasswordSchema = yup.object().shape({
     .email("Invalid email"),
 });
 
+const activationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .trim()
+    .required("Email is required")
+    .email("Invalid email"),
+  temporaryPassword: yup
+    .string()
+    .trim()
+    .required("Invalid Password"),
+  activationCode:yup
+    .string()
+    .trim()
+    .required("Invalid Activation Code"),
+});
 
+  const OtpVerificationschema = yup.object().shape({
+    otp: yup
+      .string()
+      .trim()
+      .required("OTP is required")
+      .max(6, "Enter valid number")
+      .test("len", "Enter valid phone number", (val) => val?.length === 6),
+  });
+
+  const emailSchema = yup.object().shape({
+    email: yup
+      .string()
+      .trim()
+      .required("Email is required")
+      .email("Invalid email"),
+  });
 
 export {
   loginSchema,
   resetPasswordSchema,
   forgotPasswordSchema,
   registerSchema,
+  activationSchema,
+  OtpVerificationschema,
+  emailSchema,
+  changePasswordSchema,
 };
 
 

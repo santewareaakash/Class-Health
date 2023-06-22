@@ -15,7 +15,6 @@ import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 
-
 const defaultValues = {
   firstName: "",
   lastName: "",
@@ -24,11 +23,11 @@ const defaultValues = {
   mobile: "",
   email: "",
   terms: false,
+  comments: "",
 };
 
 const SignupRequest = () => {
   // ** States
-
 
   const {
     handleSubmit,
@@ -42,12 +41,13 @@ const SignupRequest = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  const form = watch()
+  const form = watch();
 
-  console.log("form",form)
+  console.log("form", form);
 
   const onSubmit = (data) => {
-    const { email, firstName, lastName, date_of_birth, organization, mobile } = data;
+    const { email, firstName, lastName, date_of_birth, organization, mobile } =
+      data;
     console.log("data", data);
   };
 
@@ -182,7 +182,16 @@ const SignupRequest = () => {
                           )}
                         </Form.Group>
                       </Col>
-                      <Form.Group controlId="formBasicCheckBox">
+
+                      <Form.Group controlId="comments">
+                        <Form.Label>Additional Comments</Form.Label>
+                        <Form.Control
+                          as="textarea"
+                          rows={3}
+                          {...register("comments")}
+                        />
+                      </Form.Group>
+                      <Form.Group controlId="policycheck">
                         <Form.Check
                           type="checkbox"
                           label="I agree to privacy policy & terms"

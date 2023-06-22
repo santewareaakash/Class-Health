@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
           </Row>
           <Row className="align-items-center justify-content-center">
             <Col md={10}>
-              <div className="content-1">
+              <div className="content-1 set-margin">
                 <p>
                   ClassHealth Technologies Private Limited ("us", "we", or
                   "ClassHealth", which also includes its affiliates) is the
