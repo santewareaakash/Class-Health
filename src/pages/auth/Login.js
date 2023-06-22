@@ -16,6 +16,10 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./Login.css";
 import { Checkbox, FormControlLabel, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login, userLogin } from "../../redux/slice/authSlice";
+import {useNavigate} from 'react-router-dom'
+import AdminDashboard from "../admin/AdminDashboard";
 
 const defaultValues = {
   password: "",
@@ -25,6 +29,8 @@ const defaultValues = {
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const {
     control,
@@ -38,7 +44,10 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log("data", data);
+    console.log("data5654", data);
+    const params = {email:data?.email, password:data?.password,token:'4866464sdgd',refreshToken:"gsdf56g4df56g4dgf",user:{userName:"Aakash",roles:['STAFF']}}
+    dispatch(login(params))
+    navigate('/admin',<AdminDashboard />)
   };
 
   return (
@@ -156,9 +165,8 @@ const Login = () => {
                         size="large"
                         type="submit"
                         variant="contained"
-                        // sx={{ mb: 7 }}
                       >
-                        Login
+                        Sign in
                       </Button>
                       <Box
                         sx={{
@@ -176,7 +184,7 @@ const Login = () => {
                           component={Link}
                           sx={{ color: "primary.main", textDecoration: "none" }}
                         >
-                          Sign up instead
+                          Register with us
                         </Typography>
                       </Box>
                     </form>

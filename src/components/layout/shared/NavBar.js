@@ -2,13 +2,24 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "../StyleSheets/Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
+import { logout } from "../../../redux/slice/authSlice";
 
 const NavBar = () => {
+  const isLoggedIn = useSelector(({ auth }) => auth.isLoggedIn);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const handleClicktoTop = () => {
-      window.scrollTo(0, 0);
-    };
+  const logoutHandler = () => {
+    dispatch(logout());
+    navigate("/");
+  };
+
+  const handleClicktoTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <Navbar expand="lg" style={{ padding: 0 }}>
@@ -36,9 +47,15 @@ const NavBar = () => {
                 Get Early Access
               </Link>
               {/* <a className="buttonJoinUs" href="mailto:classhealth500@gmail.com">Join Us</a> */}
-              <Link className="buttonEarlyAccess" to="/login">
-                Sign In
-              </Link>
+              {isLoggedIn ? (
+                <Button className="buttonEarlyAccess" onClick={logoutHandler}>
+                  Logout
+                </Button>
+              ) : (
+                <Link className="buttonEarlyAccess" to="/login">
+                  Sign In
+                </Link>
+              )}
             </div>
           </Nav>
         </Navbar.Collapse>

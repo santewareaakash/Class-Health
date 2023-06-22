@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout/shared/Layout";
 import { Col, Container, Row } from "react-bootstrap";
 import "./TermAndCondition.css";
+import { Link } from "react-router-dom";
 
 const TermAndCondition = () => {
   return (
@@ -30,39 +31,39 @@ const TermAndCondition = () => {
                 <h4>1.NATURE AND APPLICABILITY OF TERMS</h4>
                 <p>
                   Please carefully go through these terms and conditions
-                  ("Terms") and the privacy policy available at
-                  https://www.ClassHealth.in/company/privacy ("Privacy Policy")
+                  <b>("Terms")</b> and the privacy policy available at
+                  <Link>https://www.ClassHealth.in/company/privacy</Link>
+                  <b> ("Privacy Policy") </b>
                   before you decide to access the Website or avail the services
                   made available on the Website by ClassHealth. These Terms and
                   the Privacy Policy together constitute a legal agreement
-                  ("Agreement") between you and ClassHealth in connection with
-                  your visit to the Website and your use of the Services (as
-                  defined below).
+                  <b>("Agreement")</b> between you and ClassHealth in connection
+                  with your visit to the Website and your use of the Services
+                  (as defined below).
                 </p>
                 <p>The Agreement applies to you whether you are -</p>
                 <ul>
-                  <li>
+                  <p>
                     . A medical practitioner or health care provider (whether an
                     individual professional or an organization) or similar
                     institution wishing to be listed, or already listed, on the
                     Website, including designated, authorized associates of such
-                    practitioners or institutions ("Practitioner(s)", "you" or
-                    "User"); or
-                  </li>
+                    practitioners or institutions{" "}
+                    <b>("Practitioner(s)", "you" or "User");</b> or
+                  </p>
                   <ul>
                     <li>
-                      . A medical practitioner or health care provider (whether
-                      an individual professional or an organization) or similar
-                      institution wishing to be listed, or already listed, on
-                      the Website, including designated, authorized associates
-                      of such practitioners or institutions ("Practitioner(s)",
-                      "you" or "User"); or
+                      A patient, his/her representatives or affiliates,
+                      searching for Practitioners through the Website
+                      <b>("End-User", "you" or "User");</b> or
                     </li>
                     <li>
-                      Otherwise a user of the Website ("you" or "User"). This
-                      Agreement applies to those services made available by
+                      Otherwise a user of the Website <b>("you" or "User")</b>.
+                      <br />
+                      This Agreement applies to those services made available by
                       ClassHealth on the Website, which are offered free of
-                      charge to the Users ("Services"), including the following:
+                      charge to the Users <b>("Services")</b>, including the
+                      following:
                     </li>
                     <li>
                       For Practitioners: Listing of Practitioners and their
@@ -119,18 +120,20 @@ const TermAndCondition = () => {
                     <li>the Indian Contract Act, 1872,</li>
                     <li>the (Indian) Information Technology Act, 2000, and</li>
                     <li>
-                      {" "}
                       the rules, regulations, guidelines and clarifications
                       framed there under, including the (Indian) Information
                       Technology (Reasonable Security Practices and Procedures
-                      and Sensitive Personal Information) Rules, 2011 (the "SPI
-                      Rules"), and the (Indian) Information Technology
-                      (Intermediaries Guidelines) Rules, 2011 (the "IG Rules").
+                      and Sensitive Personal Information) Rules, 2011 (the{" "}
+                      <b>"SPI Rules"</b>), and the (Indian) Information
+                      Technology (Intermediaries Guidelines) Rules, 2011 (the{" "}
+                      <b>"IG Rules"</b>).
                     </li>
                   </ul>
                 </ul>
                 <br></br>
-                <h4>2.CONDITIONS OF USE</h4>
+                <h4>
+                  <b>2.CONDITIONS OF USE</b>
+                </h4>
                 <p>
                   You must be 18 years of age or older to register, use the
                   Services, or visit or use the Website in any manner. By
@@ -143,8 +146,10 @@ const TermAndCondition = () => {
                 </p>
                 <br></br>
                 <h4>
-                  3.TERMS OF USE APPLICABLE TO ALL USERS OTHER THAN
-                  PRACTITIONERS
+                  <b>
+                    3.TERMS OF USE APPLICABLE TO ALL USERS OTHER THAN
+                    PRACTITIONERS
+                  </b>
                 </h4>
                 <p>
                   The terms in this Clause 3 are applicable only to Users other
@@ -173,8 +178,8 @@ const TermAndCondition = () => {
                       relation to the Practitioners and their practice.
                     </li>
                     <li>
-                      The Privacy Policy sets out, inter-alia: The type of
-                      information collected from Users, including sensitive
+                      The Privacy Policy sets out, inter-alia: <br /> The type
+                      of information collected from Users, including sensitive
                       personal data or information;
                     </li>
                     <ul>
@@ -191,8 +196,8 @@ const TermAndCondition = () => {
                     <li>
                       The User is expected to read and understand the Privacy
                       Policy, so as to ensure that he or she has the knowledge
-                      of, inter-alia: . the fact that certain information is
-                      being collected;
+                      of, inter-alia: <br /> . the fact that certain information
+                      is being collected;
                     </li>
                     <ul>
                       <li>
@@ -276,7 +281,7 @@ const TermAndCondition = () => {
                   </ul>
                   <br></br>
                   <li>
-                    <h5>RELEVANCE ALGORITHM</h5>                    
+                    <h5>RELEVANCE ALGORITHM</h5>
                     <p>
                       ClassHealth's relevance algorithm for the Practitioners is
                       a fully automated system that lists the Practitioners,
@@ -380,7 +385,7 @@ const TermAndCondition = () => {
                       the information published here.
                     </li>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>BOOK APPOINTMENT AND CALL FACILITY</h5>
                     <p>
@@ -399,9 +404,11 @@ const TermAndCondition = () => {
                       no liability if such an appointment is later cancelled by
                       the Practitioner, or the same Practitioner is not
                       available for appointment. Provided, it does not fall
-                      under the heads listed under the ClassHealth Guarantee
-                      Program, in which case the terms of this program shall
-                      apply.
+                      under the heads listed under the{" "}
+                      <a href="https://www.practo.com/company/prime-benefits-users">
+                        ClassHealth Guarantee Program
+                      </a>
+                      , in which case the terms of this program shall apply.
                     </li>
                     <li>
                       If a User has utilized the telephonic services,
@@ -477,7 +484,7 @@ const TermAndCondition = () => {
                       </li>
                     </ul>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>
                       NO DOCTOR-PATIENT RELATIONSHIP; NOT FOR EMERGENCY USE
@@ -520,7 +527,7 @@ const TermAndCondition = () => {
                       service or hospital directly.
                     </li>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>CLASSHEALTH HEALTH FEED</h5>
                     <p>
@@ -697,7 +704,7 @@ const TermAndCondition = () => {
                       or is insulting to any other nation.
                     </li>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>
                       CONTENT OWNERSHIP AND COPYRIGHT CONDITIONS OF ACCESS
@@ -739,7 +746,7 @@ const TermAndCondition = () => {
                       competitive purposes.
                     </li>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>REVIEWS AND FEEDBACK</h5>
                     <p>
@@ -796,7 +803,7 @@ const TermAndCondition = () => {
                       these Terms.
                     </li>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>RECORDS</h5>
                     <p>
@@ -1096,7 +1103,7 @@ const TermAndCondition = () => {
                         under the QA T&C and ClassHealth Terms and Conditions.
                       </li>
                     </ul>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>Terms for User/Querist:</h5>
                     </li>
@@ -1154,7 +1161,7 @@ const TermAndCondition = () => {
                       </li>
                     </ul>
                   </ul>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>CLASSHEALTH DIAGNOSTICS</h5>
                     <p>
@@ -1162,7 +1169,7 @@ const TermAndCondition = () => {
                       click here.
                     </p>
                   </li>
-                    <br></br>
+                  <br></br>
                   <li>
                     <h5>CLASSHEALTH HEALTHCASH</h5>
                   </li>
@@ -1350,7 +1357,7 @@ const TermAndCondition = () => {
                         and ClassHealth accepts no liability for the same.
                       </li>
                     </ul>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>PROFILE OWNERSHIP AND EDITING RIGHTS</h5>
                       <p>
@@ -1373,7 +1380,7 @@ const TermAndCondition = () => {
                         or without notice to you.
                       </p>
                     </li>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>
                         REVIEWS AND FEEDBACK DISPLAY RIGHTS OF CLASSHEALTH
@@ -1440,7 +1447,7 @@ const TermAndCondition = () => {
                         business and in the interests of Users.
                       </li>
                     </ul>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>RELEVANCE ALGORITHM</h5>
                       <p>
@@ -1455,7 +1462,7 @@ const TermAndCondition = () => {
                         Algorithm.
                       </p>
                     </li>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>INDEPENDENT SERVICES</h5>
                       <p>
@@ -1486,7 +1493,7 @@ const TermAndCondition = () => {
                         the same.
                       </p>
                     </li>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>CLASSHEALTH MEDICINE INFORMATION</h5>
                       <p>
@@ -1494,7 +1501,7 @@ const TermAndCondition = () => {
                         information click here.
                       </p>
                     </li>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>BOOK APPOINTMENT AND CALL FACILITY</h5>
                     </li>
@@ -1516,7 +1523,7 @@ const TermAndCondition = () => {
                         be solely at the discretion of ClassHealth.
                       </li>
                     </ul>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5> PRACTITIONER UNDERTAKING</h5>
                       <p>
@@ -1533,7 +1540,7 @@ const TermAndCondition = () => {
                         consultation/ services being rendered.
                       </p>
                     </li>
-                      <br></br>
+                    <br></br>
                     <li>
                       <h5>USAGE IN PROMOTIONAL & MARKETING MATERIALS</h5>
                       <p>
@@ -2356,20 +2363,20 @@ const TermAndCondition = () => {
                           Family Doctor: As a part of the Health Plan Service,
                           You will also be eligible to avail the benefit of
                           online tele-consultation with a team of Practitioners
-                          ("Family Doctor"). The Family Doctor will be available
-                          to You for consult and You are not required to pay any
-                          additional sum to consult with such Family Doctor. The
-                          Family Doctor benefit may be availed either through a
-                          phone call or chat or a video call. The Standard
-                          Policies applicable to You with regard to the online
-                          consultation (ClassHealth Consult / Consult) will
-                          apply "as is". Please note that the benefit of Family
-                          Doctor Consult is merely a consulting model and any
-                          interactions and associated issues with the
-                          Practitioner acting as Family Doctor, including but
-                          not limited to the Your health issues and/or Your
-                          experiences is strictly between You and such
-                          Practitioner. You shall not hold ClassHealth
+                          <b>("Family Doctor")</b>. The Family Doctor will be
+                          available to You for consult and You are not required
+                          to pay any additional sum to consult with such Family
+                          Doctor. The Family Doctor benefit may be availed
+                          either through a phone call or chat or a video call.
+                          The Standard Policies applicable to You with regard to
+                          the online consultation (ClassHealth Consult /
+                          Consult) will apply "as is". Please note that the
+                          benefit of Family Doctor Consult is merely a
+                          consulting model and any interactions and associated
+                          issues with the Practitioner acting as Family Doctor,
+                          including but not limited to the Your health issues
+                          and/or Your experiences is strictly between You and
+                          such Practitioner. You shall not hold ClassHealth
                           responsible for any such interactions and associated
                           issues. Any conversations that You have had with
                           Family Doctor will be retained in ClassHealth database
@@ -2395,7 +2402,7 @@ const TermAndCondition = () => {
                           replace physical consultations with the Practitioner.
                         </li>
                       </ul>
-                        <br></br>
+                      <br></br>
                       <li>
                         <h5>Payment for the Health Plan Service:</h5>
                         <p>
@@ -2414,7 +2421,7 @@ const TermAndCondition = () => {
                           by the Practitioner's establishment.
                         </p>
                       </li>
-                        <br></br>
+                      <br></br>
                       <li>
                         <h5>
                           Health Plan Service Cancellation and Refund Policy:

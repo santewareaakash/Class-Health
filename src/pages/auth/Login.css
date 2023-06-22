@@ -50,18 +50,17 @@
 .shadow-box .login-form{
     margin-top: 20px;
 }
-.shadow-box .login-form input{
+/* .shadow-box .login-form input{
     border: none !important;
     background: rgba(0, 0, 0, 0.05) !important;
     box-shadow: none !important;
     outline: none !important;
-    /* padding: 12px; */
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #000;
     height: auto !important;
-}
+} */
 .shadow-box .login-form .input-grp{
     margin-bottom: 20px;
 }

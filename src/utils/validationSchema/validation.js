@@ -1,3 +1,4 @@
+import moment from "moment/moment";
 import * as yup from "yup";
 
 //Below is the schema for login and reset password forms
@@ -14,6 +15,43 @@ const loginSchema = yup.object().shape({
       'Must contain 8 characters, one uppercase, one lowercase, one number and one special case character'
     )
 })
+const registerSchema = yup.object().shape({
+  email: yup
+    .string()
+    .trim()
+    .required("Email is required")
+    .email("Invalid email"),
+  firstName: yup
+    .string()
+    .required("Please enter first name")
+    .matches(/^[A-Za-z\s]+$/, "Please enter valid first name.")
+    .max(20, "First name can be most 20 characters"),
+  lastName: yup
+    .string()
+    .trim()
+    .required("Last name is required")
+    .matches(/^[a-zA-Z ]+$/, "Invalid last name"),
+  username: yup.string().required("Username is required"),
+  mobile: yup
+    .string()
+    .trim()
+    .required("Phone number is required")
+    .matches(/^[6-9]/, {
+      message: "Invalid mobile number",
+      excludeEmptyString: false,
+    })
+    .max(10, "Enter valid number")
+    .test("len", "Enter valid phone number", (val) => val?.length === 10),
+  organization: yup.string().required("Please select Organization name"),
+  terms: yup.bool().oneOf([true], "You must accept the privacy policy & terms"),
+  date_of_birth: yup
+    .string()
+    .nullable()
+    .test("date_of_birth", "You must be 12 years or older", function (value) {
+      return moment().diff(moment(value, "DD-MM-YYYY"), "years") >= 12;
+    })
+    .required("Please enter your age"),
+});
 
 const resetPasswordSchema = yup.object().shape({
   new_password: yup
@@ -42,6 +80,11 @@ const forgotPasswordSchema = yup.object().shape({
 
 
 
-export { loginSchema, resetPasswordSchema,forgotPasswordSchema };
+export {
+  loginSchema,
+  resetPasswordSchema,
+  forgotPasswordSchema,
+  registerSchema,
+};
 
 
