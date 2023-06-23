@@ -16,7 +16,9 @@ import StaffDashboard from "./pages/Staff/StaffDashboard";
 import SignupRequest from "./pages/auth/SignupRequest";
 import ActivationPage from "./pages/auth/ActivateAccount";
 import PasswordChange from "./pages/auth/PasswordChange";
-import VerifyMobile from "./pages/auth/Otp_verification";
+import OtpVerification from "./pages/auth/OtpVerification";
+import StaffProfile from "./pages/Staff/StaffProfile";
+import SuperAdminProfile from "./pages/SuperAdmin/SuperAdminProfile";
 
 function App() {
   return (
@@ -29,19 +31,22 @@ function App() {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/terms_conditions" element={<TermAndCondition />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
-      <Route path="/activate" element={<ActivationPage />} />
+
+      <Route path="/activate/:id" element={<ActivationPage />} />
       <Route path="/change-password" element={<PasswordChange />} />
-      <Route path="/verify-mobile" element={<VerifyMobile />} />
+      <Route path="/verify-mobile" element={<OtpVerification />} />
       <Route element={<ProtectedRoutes allowedRoles={[ROLES.ADMIN]} />}>
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/profile" element={<AdminProfile />} />
+        <Route path="/admin/profile" element={<AdminProfile />} />
       </Route>
 
       <Route element={<ProtectedRoutes allowedRoles={[ROLES.STAFF]} />}>
         <Route path="/staff" element={<StaffDashboard />} />
+        <Route path="/staff/profile" element={<StaffProfile />} />
       </Route>
       <Route element={<ProtectedRoutes allowedRoles={[ROLES.SUPERADMIN]} />}>
         <Route path="/superadmin" element={<SuperAdminDashboard />} />
+        <Route path="/superadmin/profile" element={<SuperAdminProfile />} />
       </Route>
       <Route path="/404" element={<NotFound />} />
       <Route path="*" element={<Navigate replace to={"/404"} />} />

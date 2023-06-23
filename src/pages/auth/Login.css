@@ -1,54 +1,91 @@
-.login-section{
-    min-height: 100vh;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    background-image: url('../../../public/assets/images/login-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 100%;
-    background-color: #fff;
-    position: relative;
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/public/assets/images/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 100%;
+  background-color: #fff;
+  position: relative;
 }
-.login-section:before{
-    content:'';
-    position: absolute;
-    background-color: #5051a048;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.login-section:before {
+  content: "";
+  position: absolute;
+  background-color: #5051a048;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
-.shadow-box img{
-    max-height: 360px;
-    text-align: center;
+.shadow-box img {
+  max-height: 360px;
+  text-align: center;
 }
-.shadow-box{
-    background-color: #fff;
-    box-shadow:0px 0px 10px 2px rgba(0, 0, 0, 0.15) ;
-    padding: 20px ;
-    border-radius: 10px;
-    position: relative;
+.shadow-box {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
 }
-.shadow-box h3{
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 700;
-    text-align: center;
-    text-align: center;
-    background-color: #5051a0;
-    max-width: max-content;
-    padding: 10px 15px;
-    position: absolute;
-    text-align: 0;
-    top: -14px;
-    left: 20px;
-    min-width: 200px;
-    border-radius: 10px;
-    color: #fff;
+.shadow-box h3 {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-align: center;
+  background-color: #5051a0;
+  max-width: max-content;
+  padding: 10px 15px;
+  position: absolute;
+  text-align: 0;
+  top: -14px;
+  left: 20px;
+  min-width: 200px;
+  border-radius: 10px;
+  color: #fff;
 }
-.shadow-box .login-form{
-    margin-top: 20px;
+.shadow-box h5 {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 10px 15px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #5051a0;
+  position: relative;
+  display: inline-block;
+}
+.shadow-box h5::before {
+  content: "";
+  height: 2px;
+  width: 80%;
+  background-color: #5051a0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+.shadow-box p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+  color: #000;
+}
+.shadow-box .head {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  text-align: left;
+  color: #171747;
+  margin-bottom: 10px;
+}
+.shadow-box .login-form {
+  margin-top: 20px;
 }
 /* .shadow-box .login-form input{
     border: none !important;
@@ -61,68 +98,147 @@
     color: #000;
     height: auto !important;
 } */
-.shadow-box .login-form .input-grp{
-    margin-bottom: 20px;
+.shadow-box .login-form .input-grp {
+  margin-bottom: 20px;
 }
-.shadow-box .login-form input:focus{
-    box-shadow: none;
+.shadow-box .login-form input:focus {
+  box-shadow: none;
 }
-.shadow-box .login-form a{
-     font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #5051a0;
+.shadow-box .login-form a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5051a0;
 }
-.shadow-box .login-form span{
-     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #494848;
+.shadow-box .login-form span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #494848;
+}
+.login-form .form-label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  margin-bottom: 5px;
 }
 .shadow-box .login-form .login-btn {
-    background: #5051a0;
-    border-radius: 8px;
-    width: 100%;
-    margin: 10px 0;
-    color: #fff;
-    box-shadow: none !important;
-    outline: none !important;
-    padding: 11px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 25px;
-    text-align: center;
-    border: none !important;
-    outline: none !important;
+  background: #5051a0;
+  border-radius: 8px;
+  width: 100%;
+  margin: 10px 0;
+  color: #fff;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 11px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  border: none !important;
+  outline: none !important;
 }
-
-@media (max-width:768px){
-.shadow-box h3 {
+.shadow-box .login-form .form-control,
+.shadow-box .login-form .form-select {
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #171747;
+  height: 36px;
+}
+.shadow-box .login-form .input-group {
+  border: 1px solid #171747;
+  height: 36px;
+  border-radius: 6px;
+}
+.shadow-box .login-form .input-group input {
+  border: transparent;
+  padding: 4px;
+  height: auto;
+}
+.shadow-box .login-form .react-datepicker-wrapper {
+  width: 100%;
+}
+.shadow-box .login-form .react-datepicker-wrapper input {
+  width: 100%;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #171747;
+  height: 35px;
+}
+.shadow-box .login-form textarea.form-control {
+  height: auto;
+}
+.shadow-box .login-form .form-check {
+  margin: 10px 0;
+}
+.shadow-box .login-form .form-check label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #171747;
+}
+.shadow-box .login-form .form-check input {
+  border: 1px solid #171747;
+}
+.shadow-box .login-form h6 {
+  text-align: center;
+}
+.shadow-box .login-form h6 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000;
+  margin-top: 10px;
+}
+.shadow-box .login-form h6 a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #5051a0;
+  margin-left: 4px;
+}
+.shadow-box .login-form .require-password input{
+  border-radius: 50%;
+}
+.shadow-box .login-form .require-password input[type="checkbox"]:checked {
+  background-color: #5051a0;
+}
+.shadow-box .login-form .require-password label{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .shadow-box h3 {
     font-size: 14px;
     line-height: 18px;
     padding: 6px 8px;
     min-width: 140px;
-}
-.shadow-box .login-form span, .shadow-box .login-form a{
+  }
+  .shadow-box .login-form span,
+  .shadow-box .login-form a {
     font-size: 14px;
-}
-.shadow-box .login-form .login-btn{
+  }
+  .shadow-box .login-form .login-btn {
     margin: 0;
     font-size: 14px;
     line-height: 18px;
-    padding: 8px 8px;    
-}
-.response{
+    padding: 8px 8px;
+  }
+  .response {
     display: none;
-}
-.shadow-box .login-form .input-grp{
+  }
+  .shadow-box .login-form .input-grp {
     margin-bottom: 15px;
-}
-.shadow-box{
+  }
+  .shadow-box {
     padding: 15px;
-}
-.shadow-box h3{
+  }
+  .shadow-box h3 {
     left: 15px;
-}
+  }
 }

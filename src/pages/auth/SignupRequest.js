@@ -55,10 +55,10 @@ const SignupRequest = () => {
     <div className="login-section">
       <Container>
         <Row className="align-items-center">
-          <Col md="10" className="m-auto">
+          <Col md="12" className="m-auto">
             <div className="shadow-box">
               <Row className="align-items-center">
-                <Col md={6}>
+                <Col md={8}>
                   <div className="login-form">
                     <h3>Register</h3>
                     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -98,90 +98,103 @@ const SignupRequest = () => {
                           </Form.Group>
                         </Col>
                       </Row>
-
-                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email*</Form.Label>
-                        <Form.Control
-                          type="email"
-                          placeholder="Email*"
-                          {...register("email", {
-                            required: "Email is Required",
-                          })}
-                        />
-                        {errors.email && (
-                          <Form.Text className="text-danger">
-                            {errors.email.message}
-                          </Form.Text>
-                        )}
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="dateofbirth">
-                        <Form.Label>Date Of Birth*</Form.Label>
-                        <Controller
-                          control={control}
-                          name="date_of_birth"
-                          render={({ field }) => (
-                            <ReactDatePicker
-                              placeholderText={"DD-MM-YYYY"}
-                              onChange={(value) =>
-                                field.onChange(
-                                  moment(value).format("DD-MM-YYYY")
-                                )
-                              }
-                              value={field.value}
-                              maxDate={new Date()}
-                              isClearable={true}
-                              showYearDropdown // year show and scrolldown alos
-                              scrollableMonthYearDropdown={true}
-                            />
-                          )}
-                        />
-                        {errors.date_of_birth && (
-                          <Form.Text className="text-danger">
-                            {errors.date_of_birth.message}
-                          </Form.Text>
-                        )}
-                      </Form.Group>
-
-                      <Form.Group className="mb-3" controlId="mobile">
-                        <Form.Label>Mobile*</Form.Label>
-                        <Form.Control
-                          type="number"
-                          placeholder="Mobile*"
-                          {...register("mobile", {
-                            required: "Mobile number is Required",
-                          })}
-                        />
-                        {errors.mobile && (
-                          <Form.Text className="text-danger">
-                            {errors.mobile.message}
-                          </Form.Text>
-                        )}
-                      </Form.Group>
-                      <Col lg={6}>
-                        <Form.Group className="mb-3">
-                          <Form.Label>Select Organization*</Form.Label>
-                          <Form.Select
-                            aria-label="Select Organization"
-                            {...register("organization", {
-                              required: "Please Select Organization",
-                            })}
+                      <Row>
+                        <Col md="6">
+                          <Form.Group
+                            className="mb-3"
+                            controlId="formBasicEmail"
                           >
-                            <option value="" disabled>
-                              Select Organization
-                            </option>
-                            <option value="UnionSchool">Union School</option>
-                            <option value="ChristSchool">Christ School</option>
-                            <option value="Nursing School">
-                              Nursing School
-                            </option>
-                          </Form.Select>
-                          {errors.organization && (
-                            <Form.Text className="text-danger">
-                              {errors.organization.message}
-                            </Form.Text>
-                          )}
-                        </Form.Group>
-                      </Col>
+                            <Form.Label>Email*</Form.Label>
+                            <Form.Control
+                              type="email"
+                              placeholder="Email*"
+                              {...register("email", {
+                                required: "Email is Required",
+                              })}
+                            />
+                            {errors.email && (
+                              <Form.Text className="text-danger">
+                                {errors.email.message}
+                              </Form.Text>
+                            )}
+                          </Form.Group>
+                        </Col>
+                        <Col md="6">
+                          <Form.Group className="mb-3" controlId="mobile">
+                            <Form.Label>Mobile*</Form.Label>
+                            <Form.Control
+                              type="number"
+                              placeholder="Mobile*"
+                              {...register("mobile", {
+                                required: "Mobile number is Required",
+                              })}
+                            />
+                            {errors.mobile && (
+                              <Form.Text className="text-danger">
+                                {errors.mobile.message}
+                              </Form.Text>
+                            )}
+                          </Form.Group>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md="6">
+                          <Form.Group className="mb-3" controlId="dateofbirth">
+                            <Form.Label>Date Of Birth*</Form.Label>
+                            <Controller
+                              control={control}
+                              name="date_of_birth"
+                              render={({ field }) => (
+                                <ReactDatePicker
+                                  placeholderText={"DD-MM-YYYY"}
+                                  onChange={(value) =>
+                                    field.onChange(
+                                      moment(value).format("DD-MM-YYYY")
+                                    )
+                                  }
+                                  value={field.value}
+                                  maxDate={new Date()}
+                                  isClearable={true}
+                                  showYearDropdown // year show and scrolldown alos
+                                  scrollableMonthYearDropdown={true}
+                                />
+                              )}
+                            />
+                            {errors.date_of_birth && (
+                              <Form.Text className="text-danger">
+                                {errors.date_of_birth.message}
+                              </Form.Text>
+                            )}
+                          </Form.Group>
+                        </Col>
+                        <Col md={6}>
+                          <Form.Group className="mb-3">
+                            <Form.Label>Select Organization*</Form.Label>
+                            <Form.Select
+                              aria-label="Select Organization"
+                              {...register("organization", {
+                                required: "Please Select Organization",
+                              })}
+                            >
+                              <option value="" disabled>
+                                Select Organization
+                              </option>
+                              <option value="UnionSchool">Union School</option>
+                              <option value="ChristSchool">
+                                Christ School
+                              </option>
+                              <option value="Nursing School">
+                                Nursing School
+                              </option>
+                            </Form.Select>
+                            {errors.organization && (
+                              <Form.Text className="text-danger">
+                                {errors.organization.message}
+                              </Form.Text>
+                            )}
+                          </Form.Group>
+                        </Col>
+                      </Row>
 
                       <Form.Group controlId="comments">
                         <Form.Label>Additional Comments</Form.Label>
@@ -207,23 +220,24 @@ const SignupRequest = () => {
                         )}
                       </Form.Group>
                       <div>
-                        <button className="common-btn  m-0">Submit</button>
+                        <button className="login-btn w-100  m-0">
+                          Send Request
+                        </button>
                       </div>
 
                       <div>
-                        <h6>Already have an account?</h6>
-
-                        <Link to="/login">
-                          <h6>Sign in instead</h6>
-                        </Link>
+                        <h6>
+                          Already have an account?
+                          <Link to="/login"> Sign in instead</Link>
+                        </h6>
                       </div>
                     </Form>
                   </div>
                 </Col>
-                <Col md={6}>
+                <Col md={4}>
                   <div className="text-center response">
                     <img
-                      src="assets/images/login.jpg"
+                      src="../../assets/images/login.jpg"
                       className="img-fluid"
                       alt="icon"
                     />

@@ -5,16 +5,20 @@ import * as yup from "yup";
 
 // login schema
 const loginSchema = yup.object().shape({
-  email: yup.string().trim().required('Email is required').email('Invalid email'),
+  email: yup
+    .string()
+    .trim()
+    .required("Email is required")
+    .email("Invalid email"),
   password: yup
     .string()
-    .required('Password is required')
+    .required("Password is required")
     .trim()
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-      'Must contain 8 characters, one uppercase, one lowercase, one number and one special case character'
-    )
-})
+      "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+    ),
+});
 const registerSchema = yup.object().shape({
   email: yup
     .string()
@@ -88,8 +92,6 @@ const resetPasswordSchema = yup.object().shape({
     .required("Please type password again"),
 });
 
-
-
 const forgotPasswordSchema = yup.object().shape({
   email: yup
     .string()
@@ -107,29 +109,26 @@ const activationSchema = yup.object().shape({
   temporaryPassword: yup
     .string()
     .trim()
-    .required("Invalid Password"),
-  activationCode:yup
-    .string()
-    .trim()
-    .required("Invalid Activation Code"),
+    .required("Temporary Password is Required"),
+  activationCode: yup.string().trim().required("Activation Code is Required"),
 });
 
-  const OtpVerificationschema = yup.object().shape({
-    otp: yup
-      .string()
-      .trim()
-      .required("OTP is required")
-      .max(6, "Enter valid number")
-      .test("len", "Enter valid phone number", (val) => val?.length === 6),
-  });
+const OtpVerificationschema = yup.object().shape({
+  otp: yup
+    .string()
+    .trim()
+    .required("OTP is required")
+    .max(6, "Enter valid number")
+    .test("len", "Enter valid phone number", (val) => val?.length === 6),
+});
 
-  const emailSchema = yup.object().shape({
-    email: yup
-      .string()
-      .trim()
-      .required("Email is required")
-      .email("Invalid email"),
-  });
+const emailSchema = yup.object().shape({
+  email: yup
+    .string()
+    .trim()
+    .required("Email is required")
+    .email("Invalid email"),
+});
 
 export {
   loginSchema,
@@ -141,5 +140,3 @@ export {
   emailSchema,
   changePasswordSchema,
 };
-
-

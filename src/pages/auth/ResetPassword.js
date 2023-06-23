@@ -82,8 +82,8 @@ const PasswordChange = () => {
 
                     <Form onSubmit={handleSubmit(onSubmit)}>
                       <Form.Group className="mb-3" controlId="old_password">
+                        <Form.Label>Old Password:</Form.Label>
                         <InputGroup className="mb-3">
-                          <Form.Label>Old Password:</Form.Label>
                           <Form.Control
                             type={showOldPassword ? "text" : "password"}
                             {...register("old_password", {
@@ -106,8 +106,8 @@ const PasswordChange = () => {
                         )}
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="new_password">
+                        <Form.Label>New Password:</Form.Label>
                         <InputGroup className="mb-3">
-                          <Form.Label>New Password:</Form.Label>
                           <Form.Control
                             type={showNewPassword ? "text" : "password"}
                             {...register("new_password", {
@@ -130,8 +130,8 @@ const PasswordChange = () => {
                         )}
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="confirm_password">
+                        <Form.Label>Confirm Password:</Form.Label>
                         <InputGroup className="mb-3">
-                          <Form.Label>Confirm Password:</Form.Label>
                           <Form.Control
                             type={showConfirmNewPassword ? "text" : "password"}
                             {...register("confirm_password", {
@@ -154,15 +154,15 @@ const PasswordChange = () => {
                         )}
                       </Form.Group>
                       <div>
-                        <button className="common-btn  m-0">Submit</button>
+                        <button className="login-btn w-100 mt-4">Submit</button>
                       </div>
                     </Form>
                   </div>
                 </Col>
                 <Col md={6}>
-                  <div className="text-center  response">
+                  <div className="text-center response">
                     <img
-                      src="assets/images/login.jpg"
+                      src="../../assets/images/login.jpg"
                       className="img-fluid"
                       alt="icon"
                     />

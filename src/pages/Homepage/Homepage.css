@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  background-image: url("../../../public/assets/images/background-banner.jpg");
+  background-image: url("/public/assets/images/background-banner.jpg");
 
   /* background-color: #0f39776b; */
   background-size: cover;
@@ -219,7 +219,7 @@
 
 .section-fourth::before {
   content: "";
-  background-image: url("../../../public/assets/images/background.png");
+  background-image: url("/public/assets/images/background-banner.jpg");
   position: absolute;
   top: -1px;
   height: 100%;
@@ -293,7 +293,7 @@
 }
 @media (max-width: 768px) {
   .section-track-health {
-    padding: 4rem  0 2rem;
+    padding: 4rem 0 2rem;
     background-size: 100% 100%;
     min-height: auto;
   }
@@ -363,5 +363,4 @@
   .section-third {
     padding: 20px 0;
   }
- 
 }

@@ -10,7 +10,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login, userLogin } from "../../redux/slice/authSlice";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import AdminDashboard from "../admin/AdminDashboard";
 import StaffDashboard from "../Staff/StaffDashboard";
 
@@ -22,12 +22,12 @@ const defaultValues = {
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const toggleShowpassword = ()=>{
-    setShowPassword(prev=>!prev)
-  }
+  const toggleShowpassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const {
     control,
@@ -43,10 +43,16 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log("data5654", data);
-    const params = {email:data?.email, password:data?.password,token:'4866464sdgd',refreshToken:"gsdf56g4df56g4dgf",user:{userName:"Aakash",roles:['STAFF']}}
-    dispatch(login(params))
-   
-    navigate('/staff',<StaffDashboard />)
+    const params = {
+      email: data?.email,
+      password: data?.password,
+      token: "4866464sdgd",
+      refreshToken: "gsdf56g4df56g4dgf",
+      user: { userName: "Aakash", roles: ["STAFF"] },
+    };
+    dispatch(login(params));
+
+    navigate("/staff", <StaffDashboard />);
   };
 
   return (
@@ -76,8 +82,8 @@ const Login = () => {
                         )}
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="old_password">
+                        <Form.Label>Password*</Form.Label>
                         <InputGroup className="mb-3">
-                          <Form.Label>Password*</Form.Label>
                           <Form.Control
                             type={showPassword ? "text" : "password"}
                             {...register("password", {
@@ -114,11 +120,16 @@ const Login = () => {
                       </Form.Group>
 
                       <div>
-                        <button className="common-btn  m-0">Submit</button>
+                        <button className="login-btn w-100 m-0">Submit</button>
+                      </div>
+                      <div className="text-center mt-3">
                         <Link to="/forgot-password">Forgot password?</Link>
                       </div>
-                      <div>
-                        <p>Don't have an account? <Link to="signup">Register with us</Link></p>
+                      <div className="text-center mt-2">
+                        <p>
+                          Don't have an account?{" "}
+                          <Link to="signup">Register with us</Link>
+                        </p>
                       </div>
                     </Form>
                   </div>
@@ -126,7 +137,7 @@ const Login = () => {
                 <Col md={6}>
                   <div className="text-center response">
                     <img
-                      src="assets/images/login.jpg"
+                      src='/public/assets/images/login.jpg'
                       className="img-fluid"
                       alt="icon"
                     />

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SuperAdminProfile = () => {
-  return (
-    <div>SuperAdminProfile</div>
-  )
-}
+  return <div>SuperAdminProfile</div>;
+};
 
-export default SuperAdminProfile
+export default SuperAdminProfile;

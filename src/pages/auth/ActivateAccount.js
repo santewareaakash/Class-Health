@@ -7,20 +7,23 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Container, Form, Row, Col } from "react-bootstrap";
 import { activationSchema } from "../../utils/validationSchema/validation";
 
-import "react-datepicker/dist/react-datepicker.css";import moment from "moment";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 
 const defaultValues = {
-  activationCode:'',
-  email:'',
-  temporaryPassword:'',
+  activationCode: "",
+  email: "",
+  temporaryPassword: "",
 };
 
 const ActivationPage = () => {
+  const params = useParams();
+  console.log(params.id);
 
   const {
     handleSubmit,
@@ -39,8 +42,7 @@ const ActivationPage = () => {
   console.log("form", form);
 
   const onSubmit = (data) => {
-    const {activationCode,email,temporaryPassword } =
-      data;
+    const { activationCode, email, temporaryPassword } = data;
     console.log("data", data);
   };
 
@@ -53,7 +55,7 @@ const ActivationPage = () => {
               <Row className="align-items-center">
                 <Col md={6}>
                   <div className="login-form">
-                    <h3>Register</h3>
+                    <h3>Activate Account</h3>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                       <Form.Group className="mb-3" controlId="activationCode">
                         <Form.Label>Activation Code:</Form.Label>
@@ -74,7 +76,7 @@ const ActivationPage = () => {
                         <Form.Label>Email*</Form.Label>
                         <Form.Control
                           type="email"
-                          placeholder="Email:"
+                          
                           {...register("email", {
                             required: "Email is Required",
                           })}
@@ -85,12 +87,15 @@ const ActivationPage = () => {
                           </Form.Text>
                         )}
                       </Form.Group>
-                      <Form.Group className="mb-3" controlId="temporaryPassword">
-                        <Form.Label>Temporary Password:</Form.Label>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="temporaryPassword"
+                      >
+                        <Form.Label>Temporary Password</Form.Label>
                         <Form.Control
                           type="password"
                           {...register("temporaryPassword", {
-                            required: "temporaryPassword is Required",
+                            required: "Temporary Password is Required",
                           })}
                         />
                         {errors.temporaryPassword && (
@@ -101,7 +106,7 @@ const ActivationPage = () => {
                       </Form.Group>
 
                       <div>
-                        <button className="common-btn  m-0">Activate</button>
+                        <button className="login-btn  mt-3">Activate</button>
                       </div>
                     </Form>
                   </div>
@@ -109,7 +114,7 @@ const ActivationPage = () => {
                 <Col md={6}>
                   <div className="text-center response">
                     <img
-                      src="assets/images/login.jpg"
+                      src={require("../../assets/images/login.jpg")}
                       className="img-fluid"
                       alt="icon"
                     />
